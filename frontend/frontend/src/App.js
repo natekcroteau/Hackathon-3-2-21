@@ -1,8 +1,8 @@
 import './App.css';
-import { Component } from 'react'
-import ArtistList from './Components/ArtistList';
-import YoutubeSearch from './Components/YoutubeSearch';
-import Header from './Components/Header'
+import { Component } from 'react';
+import ArtistList from './Components/ArtistList/ArtistList';
+import YoutubeSearch from './Components/YTSearch/YoutubeSearch';
+import Header from './Components/Header/Header';
 
 class App extends Component {
 

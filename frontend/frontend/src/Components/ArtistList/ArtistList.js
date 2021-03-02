@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
+import "./artist-list.css";
 
 export default function ArtistList(props) {
 
@@ -8,7 +9,7 @@ export default function ArtistList(props) {
   })
 
   return (
-    <div>
+    <div className="artist-list">
       {displayArtists()}
     </div>
   )
