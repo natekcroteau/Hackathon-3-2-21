@@ -6,8 +6,16 @@ import YoutubeSearch from './Components/YoutubeSearch';
 class App extends Component {
 
   state = {
-    artists: []
+    artists: [],
+    searchTerm: []
   }
+
+  addSearch = (artist) => {
+    this.setState({
+      searchTerm: artist
+    })
+  }
+
 
   componentDidMount(){
     fetch('http://localhost:3000/artists')
@@ -20,7 +28,7 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <ArtistList artists={this.state.artists} />
+        <ArtistList addSearch={this.addSearch} artists={this.state.artists} />
         <YoutubeSearch />
       </div>
     );
