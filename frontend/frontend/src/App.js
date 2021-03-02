@@ -1,12 +1,30 @@
-
 import './App.css';
+import { Component } from 'react'
+import ArtistList from './Components/ArtistList';
+import YoutubeSearch from './Components/YoutubeSearch';
 
-function App() {
-  return (
-    <div className="App">
+class App extends Component {
 
-    </div>
-  );
+  state = {
+    artists: []
+  }
+
+  componentDidMount(){
+    fetch('http://localhost:3000/artists')
+      .then(response => response.json())
+      .then(results => this.setState({
+        artists: results
+      }))
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <ArtistList artists={this.state.artists} />
+        <YoutubeSearch />
+      </div>
+    );
+  }
 }
 
 export default App;
