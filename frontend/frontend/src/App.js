@@ -1,7 +1,8 @@
 import './App.css';
-import { Component } from 'react';
-import ArtistList from './Components/ArtistList/ArtistList';
-import YoutubeSearch from './Components/YTSearch/YoutubeSearch';
+import { Component } from 'react'
+import ArtistList from './Components/ArtistList';
+import YoutubeSearch from './Components/YoutubeSearch';
+import Header from './Components/Header'
 
 class App extends Component {
 
@@ -28,8 +29,9 @@ class App extends Component {
   render(){
     return (
       <div className="App">
+        <Header />
         <ArtistList addSearch={this.addSearch} artists={this.state.artists} />
-        <YoutubeSearch />
+        <YoutubeSearch searchTerm={this.state.searchTerm} />
       </div>
     );
   }
